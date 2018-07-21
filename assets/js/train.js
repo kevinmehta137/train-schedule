@@ -1,10 +1,22 @@
 
 
-// 2. Populate Firebase Database with initial data (in this case, I did this via Firebase GUI)
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCnj2j090LKCNSkWH464v2Mk_vsNy64CVY",
+    authDomain: "train-schedule-1003e.firebaseapp.com",
+    databaseURL: "https://train-schedule-1003e.firebaseio.com",
+    projectId: "train-schedule-1003e",
+    storageBucket: "",
+    messagingSenderId: "908056931962"
+  };
+  firebase.initializeApp(config);
+
+    var trainData = firebase.database();
+
 // 3. Button for adding trains
 $("#add-train-btn").on("click", function() {
 
-  // Grabs user input
+  // user input
   var trainName = $("#train-name-input").val().trim();
   var destination = $("#destination-input").val().trim();
   var firstTrain = $("#first-train-input").val().trim();
